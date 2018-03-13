@@ -6,13 +6,13 @@
 @section('content')
 	<div class="row">
 		@if(!isset($userId))
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<div class="m-portlet">
 				<div class="m-portlet__head">
 					<div class="m-portlet__head-caption">
 						<div class="m-portlet__head-title">
 							<h3 class="m-portlet__head-text">
-								Öğrenciler
+								Kullanıcılar
 							</h3>
 						</div>
 					</div>
@@ -28,7 +28,7 @@
 							</tr>
 							</thead>
 							<tbody>
-							@foreach(\App\Student::get() as $student)
+							@foreach(\App\User::get() as $user)
 
 								<tr>
 										<td><a href="{{ route('admin.userProcess').'/student/'.$student->id }}" style="text-transform:capitalize;">{{ $student->name }}</a></td>
@@ -43,44 +43,7 @@
 			</div>
 		</div>
 
-		<div class="col-md-4">
-			<div class="m-portlet">
-				<div class="m-portlet__head">
-					<div class="m-portlet__head-caption">
-						<div class="m-portlet__head-title">
-							<h3 class="m-portlet__head-text">
-								Öğretmenler
-							</h3>
-						</div>
-					</div>
-				</div>
-
-				<div class="m-form m-form--fit m-form--label-align-right">
-					<div class="m-portlet__body p-10">
-						<table class="table table-hover">
-							<thead>
-							<tr>
-								<th scope="col">Ad Soyad</th>
-								<th scope="col">T.C. Kimlik Nu.</th>
-							</tr>
-							</thead>
-							<tbody>
-							@foreach(\App\Teacher::get() as $teacher)
-
-								<tr>
-									<td><a href="{{ route('admin.userProcess').'/teacher/'.$teacher->id }}" style="text-transform:capitalize;">{{ $teacher->name }}</a></td>
-									<td>{{ $teacher->email }}</td>
-								</tr>
-
-							@endforeach
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<div class="m-portlet">
 				<div class="m-portlet__head">
 					<div class="m-portlet__head-caption">
