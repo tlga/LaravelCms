@@ -54,7 +54,7 @@
         </div>
 
         <div class="form-group m-form__group ">
-            <a href="{{ route('admin.home') }}" title="Admin Paneli"><i class="fa fa-chevron-left"></i> Panele Dön</a>
+            <a href="{{ route('admin.administrator') }}" title="Admin Paneli"><i class="fa fa-chevron-left"></i> Panele Dön</a>
         </div>
     </form>
     </div>
