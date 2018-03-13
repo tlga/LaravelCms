@@ -59,7 +59,7 @@
 
 									<div class="center-block">
 										<strong>Yüklemek İstediğiniz Görseli Seçin <span id="photoCounter"></span></strong><span>(1900px genişliğinden büyük optimize edilmiş görseller tavsiye edilir.)</span><br />
-										<form class="m-dropzone dropzone m-dropzone--primary" action="{{ URL::Route('upload-post') }}" id="m-dropzone-two">
+										<form class="m-dropzone dropzone m-dropzone--primary" action="{{ URL::Route('admin.upload-post') }}" id="m-dropzone-two">
 											<meta name="csrf-token" content="{{ csrf_token() }}">
 											<input type="hidden" name="type" value="3">
 											<div class="m-dropzone__msg dz-message needsclick">
@@ -274,7 +274,7 @@
 	$(document).on('click','.fileDelete', function() {
 			var dataId = $(this).attr('data-id');
 			$(this).parents('tr').remove();
-		ajaxPost('{{ route('admin.uploadDelete') }}',fnSelect,'id='+dataId);
+		ajaxPost('{{ route('admin.upload-remove') }}/'+dataId,fnSelect,'id='+dataId);
 
 		ajaxPost('{{ route('admin.sliderDelete') }}',fnSelect,'id='+dataId);
 
