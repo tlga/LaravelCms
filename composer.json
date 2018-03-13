@@ -1,9 +1,9 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "tlga/LaravelCms",
+    "description": "Aura Agency Laravel 5.5 Content Managed System",
+    "keywords": ["framework", "laravel","Aura","Aura Agency","Cms","Content Manage","Populer","Trend"],
     "license": "MIT",
-    "type": "project",
+    "type": "website",
     "require": {
         "php": ">=7.0.0",
         "baum/baum": "~1.1",
