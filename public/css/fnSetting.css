@@ -1,0 +1,31 @@
+.myAlertStyle {
+    position: fixed;
+    z-index: 9999;
+    right: 0;
+    top: 100px;
+    width: 300px;
+}
+.mediaLib {
+    display: grid;
+}
+.mediaLib .getButton {
+    text-align:center;
+}
+.tab-pane .m-btn--pill.active {
+    -webkit-box-shadow: inset 0px 0px 19px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 19px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 19px 0px rgba(0,0,0,0.75);
+}
+.iframeBlock {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 160px;
+    position: absolute;
+}
+.m-form__help {
+    color: #b0b0b0;
+}
+.m-form__group label {
+    font-weight:400;
+}
