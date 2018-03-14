@@ -4,18 +4,6 @@
     "keywords": ["framework", "laravel","Aura","Aura Agency","Cms","Content Manage","Populer","Trend"],
     "license": "MIT",
     "type": "website",
-    "repositories": [ {
-        "type": "website",
-        "package": {
-            "name": "tlga/LaravelCms",
-            "version": "0.0.1",
-            "source": {
-                "url": "https://github.com/tlga/LaravelCms.git",
-                "type": "git",
-                "reference": "master"
-              }
-         }
-    }],
     "require": {
         "php": ">=7.0.0",
         "baum/baum": "~1.1",
