@@ -35,12 +35,15 @@ class ImageRepository
 		$originalNameWithoutExt = substr($originalName, 0, strlen($originalName) - strlen($extension) - 1);
 		$filename = $this->sanitize($originalNameWithoutExt);
 		$allowed_filename = $this->createUniqueFilename( $filename, $extension );
-		if(isset($form_data['archive'])) {
+
+		if($extension == 'pdf' || $extension == 'doc' || $extension == 'docx' || $extension == 'xls') {
 			$uploadSuccess1 = $this->userUpload( $photo, $allowed_filename );
 			$uploadSuccess2 = true;
+			$type = 2;
 		} else {
 			$uploadSuccess1 = $this->original( $photo, $allowed_filename );
 			$uploadSuccess2 = $this->icon( $photo, $allowed_filename );
+			$type = 0;
 		}
 
 		if( !$uploadSuccess1 || !$uploadSuccess2 ) {
@@ -52,11 +55,11 @@ class ImageRepository
 		}
 		$sessionImage = new Image;
 		$sessionImage->filename      = $allowed_filename;
-		$sessionImage->type      = 0;
+		$sessionImage->type      = $type;
 		$sessionImage->original_name = $originalName;
 		$sessionImage->save();
 
-		$type = 1;
+
 
 		return Response::json([
 			'error' => false,
@@ -91,8 +94,8 @@ class ImageRepository
 
 	public function userUpload( $photo, $filename )
 	{
-		$manager = new ImageManager();
-		$image = $manager->make( $photo )->save(Config::get('app.user_upload') . $filename );
+		mkdir(Config::get('app.user_upload'), 0755, true);
+		$image = move_uploaded_file($photo,Config::get('app.user_upload').$filename);
 		return $image;
 	}
 	/**

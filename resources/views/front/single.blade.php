@@ -8,7 +8,7 @@
   <div class="main-raised">
 
 
-          @if(isset($featured) && ($featured != 0))
+          @if(isset($featured) && ($featured != null))
           <div class="featuredImg">
             <img src="{{ asset('/images/full_size/'.$featured) }}" class="img-fluid">
           </div>
