@@ -17,7 +17,7 @@ class CreateTermTaxonomyTable extends Migration
             $table->integer('term_id');
             $table->string('taxonomy');
             $table->integer('parent');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->integer('count');
         });
     }

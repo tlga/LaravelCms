@@ -16,7 +16,7 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->integer('post_author');
             $table->text('post_content');
-            $table->longText('user_form');
+            $table->longText('user_form')->nullable();
             $table->string('post_title');
             $table->string('post_slug');
             $table->integer('post_featured');
